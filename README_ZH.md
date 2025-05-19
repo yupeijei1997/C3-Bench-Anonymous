@@ -213,22 +213,22 @@ python3 analysis_result.py \
 
 特别的，我们将论文中汇报的所有模型的结果都持久化的保存在了c3_bench/bench_test/result目录下，方便每个人直接复现论文中的结果，便利相关的Agent模型研发同学分析badcase，以及为想快速学习评估代码的同学提供了便利的方式，而不用重新进行推理。
 
-如下为一个复现 gpt-o1 结果的示例
+如下为一个复现 gpt-4o 结果的示例
 
 ```bash
 python3 analysis_result.py \
-    --data_file ./result/2025-02-11-11:45:51_a5be8b_gpt4o1_en_remove_role_contain_context.jsonl \
+    --data_file ./result/2025-04-28-18:03:45_89a6a1_gpt4o_en_remove_role_contain_context_history_with_planner_tool.jsonl \
     --output_csv_flag=True \
     --output_csv_path=./data_with_details.csv
 ```
 
 此外，我们还支持了同时对多个模型的预测结果进行评估，这进一步增加了易用性。
 
-如下为一个同时复现 gpt-o1 和 gpt4o 结果的示例，多个文件使用,拼接
+如下为一个同时复现 gpt-4o 和 gpt-o1 结果的示例，多个文件使用,拼接
 
 ```bash
 python3 analysis_result.py \
-    --data_file ./result/2025-02-11-11:45:51_a5be8b_gpt4o1_en_remove_role_contain_context.jsonl,./result/2025-02-11-14:40:24_5ef3f9_gpt4o1120_en_remove_role_contain_context.jsonl \
+    --data_file ./result/2025-04-28-18:03:45_89a6a1_gpt4o_en_remove_role_contain_context_history_with_planner_tool.jsonl,./result/2025-04-29-17:29:50_01f8b7_gpt4o1_en_remove_role_contain_context_history_with_planner_tool.jsonl \
     --output_csv_flag=True \
     --output_csv_path=./data_with_details.csv
 ```

@@ -214,22 +214,22 @@ python3 analysis_result.py \
 
 In particular, we have persistently saved the results of all models reported in the paper in the c3_bench/bench_test/result directory, making it convenient for everyone to directly reproduce the results presented in the paper. This facilitates people developing Agent models to analyze bad cases, and provides a convenient way for people who want to quickly learn evaluation code, without the need to perform inference again.
 
-Below is an example of how to reproduce the results of GPT-o1.
+Below is an example of how to reproduce the results of GPT-4o.
 
 ```bash
 python3 analysis_result.py \
-    --data_file ./result/2025-02-11-11:45:51_a5be8b_gpt4o1_en_remove_role_contain_context.jsonl \
+    --data_file ./result/2025-04-28-18:03:45_89a6a1_gpt4o_en_remove_role_contain_context_history_with_planner_tool.jsonl \
     --output_csv_flag=True \
     --output_csv_path=./data_with_details.csv
 ```
 
 Additionally, we have also supported the evaluation of prediction results from multiple models at the same time, which further enhances usability.
 
-Below is an example of simultaneously reproducing the results of GPT-o1 and GPT-4o, with multiple files concatenated using a comma.
+Below is an example of simultaneously reproducing the results of GPT-4o and GPT-o1, with multiple files concatenated using a comma.
 
 ```bash
 python3 analysis_result.py \
-    --data_file ./result/2025-02-11-11:45:51_a5be8b_gpt4o1_en_remove_role_contain_context.jsonl,./result/2025-02-11-14:40:24_5ef3f9_gpt4o1120_en_remove_role_contain_context.jsonl \
+    --data_file ./result/2025-04-28-18:03:45_89a6a1_gpt4o_en_remove_role_contain_context_history_with_planner_tool.jsonl,./result/2025-04-29-17:29:50_01f8b7_gpt4o1_en_remove_role_contain_context_history_with_planner_tool.jsonl \
     --output_csv_flag=True \
     --output_csv_path=./data_with_details.csv
 ```
